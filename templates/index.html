@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smoker Predictor App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #D9F8F9; /* Alice blue background */
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 700px; /* Max width for the form */
+            border: 1px solid #e0e0e0; /* Light grey border */
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50; /* Dark blue-grey color for the heading */
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #3246A0 ; /* Dark blue-grey color for the heading */
+    
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #34495e; /* Darker grey color for labels */
+            font-size: 16px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #bdc3c7; /* Light grey border */
+            border-radius: 5px; /* Rounded corners for input fields */
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #3498db; /* Blue background for submit button */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px; /* Rounded corners for submit button */
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #1BA822; /* Red color for the result */
+        }
+
+        .some-content {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .some-content h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .some-content p {
+            margin-bottom: 20px;
+        }
+
+        .some-content a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .some-content a:hover {
+            text-decoration: underline;
+        }
+
+        .some-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .some-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .some-content .resources {
+            margin-top: 20px;
+        }
+
+        .some-content .resources h2 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Machine Learning Project</h1>
+
+    <div class="form-container">
+        <h2>Prediction of Smoker Status Bio-Signals</h2>
+        <form action="/predict" method="post">
+            <label for="age">Age:</label>
+            <input type="number" name="age" required />
+
+            <label for="height">Height (cm):</label>
+            <input type="number" step="0.1" name="height" required />
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" step="0.1" name="weight" required />
+
+            <label for="waist">Waist (cm):</label>
+            <input type="number" step="0.1" name="waist" required />
+
+            <label for="eyesight_left">Eyesight (left):</label>
+            <input type="number" step="0.01" name="eyesight_left" required />
+
+            <label for="eyesight_right">Eyesight (right):</label>
+            <input type="number" step="0.01" name="eyesight_right" required />
+
+            <label for="hearing_left">Hearing (left):</label>
+            <input type="number" step="0.01" name="hearing_left" required />
+
+            <label for="hearing_right">Hearing (right):</label>
+            <input type="number" step="0.01" name="hearing_right" required />
+
+            <label for="systolic">Systolic (Blood Pressure):</label>
+            <input type="number" step="0.1" name="systolic" required />
+
+            <label for="relaxation">Relaxation (Blood Pressure):</label>
+            <input type="number" step="0.1" name="relaxation" required />
+
+            <label for="fasting_blood_sugar">Fasting Blood Sugar (Sugar Level):</label>
+            <input type="number" step="0.1" name="fasting_blood_sugar" required />
+
+            <label for="cholesterol">Cholesterol:</label>
+            <input type="number" step="0.1" name="cholesterol" required />
+
+            <label for="triglyceride">Triglyceride (level of triglycerides in the blood):</label>
+            <input type="number" step="0.1" name="triglyceride" required />
+
+            <label for="hdl">HDL (High-Density Lipoprotein):</label>
+            <input type="number" step="0.1" name="hdl" required />
+
+            <label for="ldl">LDL (Low-Density Lipoprotein):</label>
+            <input type="number" step="0.1" name="ldl" required />
+
+            <label for="haemoglobin">Haemoglobin:</label>
+            <input type="number" step="0.1" name="haemoglobin" required />
+
+            <label for="urine_protein">Urine Protein:</label>
+            <input type="number" step="0.1" name="urine_protein" required />
+
+            <label for="serum_creatinine">Serum Creatinine (level of creatinine in the blood):</label>
+            <input type="number" step="0.1" name="serum_creatinine" required />
+
+            <label for="ast">AST (enzyme found in the liver):</label>
+            <input type="number" step="0.1" name="ast" required />
+
+            <label for="alt">ALT (enzyme found in the liver):</label>
+            <input type="number" step="0.1" name="alt" required />
+
+            <label for="gtp">Gtp (enzyme found in the liver and bile ducts):</label>
+            <input type="number" step="0.1" name="gtp" required />
+
+            <label for="dental_caries">Dental Caries (extent of cavities or tooth decay):</label>
+            <input type="number" step="0.1" name="dental_caries" required />
+
+            <input type="submit" value="Predict" />
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+
+    <div class="some-content">
+        <h1>Understanding the Impact of Smoking</h1>
+        <p>Smoking is notoriously harmful to health, contributing to a range of severe medical conditions. It leads to respiratory problems like chronic bronchitis and emphysema, which cause persistent coughing, mucus production, and difficulty breathing. The cardiovascular system also suffers, with increased risks of heart disease, high blood pressure, and stroke. Additionally, smoking is a major risk factor for various cancers, including lung cancer, and heightens the likelihood of developing cancers of the mouth, throat, bladder, and kidneys. Beyond these specific conditions, smoking weakens the immune system, making individuals more susceptible to infections, and accelerates premature aging, leading to wrinkles and loss of skin elasticity. Nicotine addiction further complicates the issue, as it creates strong cravings and withdrawal symptoms, such as irritability and anxiety, when attempting to quit.</p>
+        <div class="resources">
+            <h2>Resources for Quitting Smoking</h2>
+            <p>To manage and control smoking, numerous resources are available:</p>
+            <ul>
+                <li><a href="https://www.smokefree.gov" target="_blank">Smokefree.gov</a>: Provides helpful information and support.</li>
+                <li><a href="https://www.cdc.gov/tobacco" target="_blank">CDC - Smoking & Tobacco Use</a>: Offers comprehensive details on health risks and quitting strategies.</li>
+                <li><a href="https://www.lung.org/quit-smoking" target="_blank">Lung.org</a>: Supports quitting efforts.</li>
+                <li><a href="https://www.quitnow.net" target="_blank">QuitNow</a>: A mobile app with tools and tracking features to aid in the quitting process.</li>
+                <li><a href="https://www.quit.org.au" target="_blank">My QuitBuddy</a>: Another mobile app for quitting smoking with tips and motivation.</li>
+            </ul>
+            <p>Local health services and clinics may also provide personalized cessation programs and support.</p>
+        </div>
+    </div>
+
+</body>
+</html>
