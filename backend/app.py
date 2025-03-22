@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
+#app.py
 
 # Load the trained model
 model_path = 'model.pkl'
