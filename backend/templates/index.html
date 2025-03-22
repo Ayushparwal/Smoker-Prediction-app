@@ -19,92 +19,99 @@
             <form action="/predict" method="post" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="form-group">
                     <label class="block font-semibold">Age</label>
-                    <input type="number" name="age" class="form-control" required>
+                    <input type="number" name="age" class="form-control" min="18" max="100" required>
                 </div>
                 <div class="form-group">
                     <label class="block font-semibold">Height (cm)</label>
-                    <input type="number" step="0.1" name="height" class="form-control" required>
+                    <input type="number" step="0.1" name="height" class="form-control" min="100" max="250" required>
                 </div>
                 <div class="form-group">
                     <label class="block font-semibold">Weight (kg)</label>
-                    <input type="number" step="0.1" name="weight" class="form-control" required>
+                    <input type="number" step="0.1" name="weight" class="form-control" min="30" max="200" required>
                 </div>
                 <div class="form-group">
                     <label class="block font-semibold">Waist (cm)</label>
-                    <input type="number" step="0.1" name="waist" class="form-control" required>
+                    <input type="number" step="0.1" name="waist" class="form-control" min="50" max="150" required>
                 </div>
                 <div class="form-group">
                     <label class="block font-semibold">Eyesight (Left)</label>
-                    <input type="number" step="0.01" name="eyesight_left" class="form-control" required>
+                    <input type="number" step="0.01" name="eyesight_left" class="form-control" min="0" max="2.0" required>
                 </div>
                 <div class="form-group">
                     <label class="block font-semibold">Eyesight (Right)</label>
-                    <input type="number" step="0.01" name="eyesight_right" class="form-control" required>
+                    <input type="number" step="0.01" name="eyesight_right" class="form-control" min="0" max="2.0" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Hearing (Left)</label>
-                    <input type="number" step="0.01" name="hearing_left" class="form-control" required>
+                    <label class="block font-semibold">Hearing (Left) (dB)</label>
+                    <input type="number" step="0.01" name="hearing_left" class="form-control" min="0" max="120" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Hearing (Right)</label>
-                    <input type="number" step="0.01" name="hearing_right" class="form-control" required>
+                    <label class="block font-semibold">Hearing (Right) (dB)</label>
+                    <input type="number" step="0.01" name="hearing_right" class="form-control" min="0" max="120" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Systolic Blood Pressure</label>
-                    <input type="number" step="0.1" name="systolic" class="form-control" required>
+                    <label class="block font-semibold">Systolic Blood Pressure (mmHg)</label>
+                    <input type="number" step="0.1" name="systolic" class="form-control" min="90" max="180" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Relaxation Blood Pressure</label>
-                    <input type="number" step="0.1" name="relaxation" class="form-control" required>
+                    <label class="block font-semibold">Relaxation Blood Pressure (mmHg)</label>
+                    <input type="number" step="0.1" name="relaxation" class="form-control" min="50" max="120" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Fasting Blood Sugar</label>
-                    <input type="number" step="0.1" name="fasting_blood_sugar" class="form-control" required>
+                    <label class="block font-semibold">Fasting Blood Sugar (mg/dL)</label>
+                    <input type="number" step="0.1" name="fasting_blood_sugar" class="form-control" min="70" max="200" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Cholesterol</label>
-                    <input type="number" step="0.1" name="cholesterol" class="form-control" required>
+                    <label class="block font-semibold">Cholesterol (mg/dL)</label>
+                    <input type="number" step="0.1" name="cholesterol" class="form-control" min="100" max="300" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Triglyceride</label>
-                    <input type="number" step="0.1" name="triglyceride" class="form-control" required>
+                    <label class="block font-semibold">Triglyceride (mmol/L)</label>
+                    <input type="number" step="0.1" name="triglyceride" class="form-control" min="50" max="500" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">HDL</label>
-                    <input type="number" step="0.1" name="hdl" class="form-control" required>
+                    <label class="block font-semibold">HDL (mmol/L)</label>
+                    <input type="number" step="0.1" name="hdl" class="form-control" min="20" max="100" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">LDL</label>
-                    <input type="number" step="0.1" name="ldl" class="form-control" required>
+                    <label class="block font-semibold">LDL (mmol/L)</label>
+                    <input type="number" step="0.1" name="ldl" class="form-control" min="50" max="200" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Haemoglobin</label>
-                    <input type="number" step="0.1" name="haemoglobin" class="form-control" required>
+                    <label class="block font-semibold">Haemoglobin (g/L)</label>
+                    <input type="number" step="0.1" name="haemoglobin" class="form-control" min="8" max="20" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Urine Protein</label>
-                    <input type="number" step="0.1" name="urine_protein" class="form-control" required>
+                    <label class="block font-semibold">Urine Protein (g/day)</label>
+                    <input type="number" step="0.1" name="urine_protein" class="form-control" min="0" max="5" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Serum Creatinine</label>
-                    <input type="number" step="0.1" name="serum_creatinine" class="form-control" required>
+                    <label class="block font-semibold">Serum Creatinine (µmol/L)</label>
+                    <input type="number" step="0.1" name="serum_creatinine" class="form-control" min="0.5" max="2.0" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">AST</label>
-                    <input type="number" step="0.1" name="ast" class="form-control" required>
+                    <label class="block font-semibold">AST (U/L)</label>
+                    <input type="number" step="0.1" name="ast" class="form-control" min="5" max="50" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">ALT</label>
-                    <input type="number" step="0.1" name="alt" class="form-control" required>
+                    <label class="block font-semibold">ALT (U/L)</label>
+                    <input type="number" step="0.1" name="alt" class="form-control" min="5" max="60" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">GTP</label>
-                    <input type="number" step="0.1" name="gtp" class="form-control" required>
+                    <label class="block font-semibold">GTP (U/L)</label>
+                    <input type="number" step="0.1" name="gtp" class="form-control" min="10" max="100" required>
                 </div>
                 <div class="form-group">
-                    <label class="block font-semibold">Dental Caries</label>
-                    <input type="number" step="0.1" name="dental_caries" class="form-control" required>
+                    <label class="block font-semibold">Dental Caries (0 or 1)</label>
+                    <input type="number" step="0.1" name="dental_caries" class="form-control" min="0" max="5" required>
                 </div>
+                <div class="col-span-2 text-center mt-4">
+                    <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">
+                        Predict
+                    </button>
+                </div>
+            </form>
+        </div>
                 <div class="col-span-2 text-center mt-4">
                     <button type="submit" class="btn btn-primary w-full py-2 text-lg">Predict</button>
                 </div>
